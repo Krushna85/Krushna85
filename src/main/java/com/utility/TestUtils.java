@@ -28,29 +28,29 @@ public class TestUtils extends BaseClass {
 		return randomstring();
 	}
 
-	public static void Custom_SendKeys(WebElement element, String value, String fieldName) {
+	public static void Custom_SendKeys(WebElement element, String value) {
 		try {
 			element.clear();
 			element.sendKeys(value);
 			// test.log(Status.PASS, fieldName+"==Value Succesfully Send " + value);
 			// test.log(Status.PASS, fieldName);
-			log.info("Value Succesfully Sent " + fieldName);
+			// log.info("Value Succesfully Sent " + fieldName);
 		} catch (Exception e) {
 			// test.log(Status.FAIL, e.getMessage() + "" + fieldName);
-			log.error("Unable to send value " + fieldName);
+			// log.error("Unable to send value " + fieldName);
 		}
 	}
 
-	public static void Custom_Click(WebElement element, String fieldName) {
+	public static void Custom_Click(WebElement element) {
 		try {
 			// waitForVisibilityOfElement(element);
 			element.click();
-			log.info("Click Succesfully " + "" + fieldName);
+			// log.info("Click Succesfully " + "" + fieldName);
 
 		} catch (Exception e) {
 //				
 			// element.click();
-			log.error("Unable to click " + fieldName);
+			// log.error("Unable to click " + fieldName);
 
 		}
 	}

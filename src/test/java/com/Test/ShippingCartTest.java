@@ -25,7 +25,7 @@ public class ShippingCartTest extends BaseClass {
 		ac.sendAddress1("laxmi pg");
 		ac.sendPostalCode("122001");
 		ac.sendPhoneNo("4492484929");
-		// ac.clickOnContinue();
+		ac.clickOnContinue();
 	}
 
 }

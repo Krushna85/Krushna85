@@ -22,8 +22,8 @@ public class UserRegistrarionTest extends BaseClass {
 		ur.sendCompanyName("NRB");
 		ur.sendPassword("Times2@123");
 		ur.sendConfirmPassword("Times2@123");
-		// ur.ClickRegisterButton();
-		ts.Custom_Screenshot();
+		ur.ClickRegisterButton();
+		// ts.Custom_Screenshot();
 
 	}
 
