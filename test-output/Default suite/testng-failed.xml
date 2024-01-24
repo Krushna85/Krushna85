@@ -5,10 +5,10 @@
     <classes>
       <class name="com.Test.UserRegistrarionTest">
         <methods>
+          <include name="userLoginUsingExcelData"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="RegisterNewUser"/>
-          <include name="getPageClassObject"/>
+          <include name="aagetPageClassObject"/>
         </methods>
       </class> <!-- com.Test.UserRegistrarionTest -->
     </classes>

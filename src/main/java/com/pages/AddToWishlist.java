@@ -3,6 +3,8 @@ package com.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.utility.TestUtils;
+
 public class AddToWishlist extends BasePage {
 
 	public AddToWishlist() {
@@ -15,10 +17,10 @@ public class AddToWishlist extends BasePage {
 	@FindBy(xpath = "//button[text()='Search']")
 	private WebElement SEARCH_BUTTON;
 
-	@FindBy(id = "products-orderby")
+	@FindBy(id = "producTestUtils-orderby")
 	private WebElement POSITION;
 
-	@FindBy(id = "products-pagesize")
+	@FindBy(id = "producTestUtils-pagesize")
 	private WebElement DISPLAY_SIZE;
 
 	@FindBy(xpath = "(//a[text()='HTC One M8 Android L 5.0 Lollipop'])[2]")
@@ -37,35 +39,35 @@ public class AddToWishlist extends BasePage {
 	private WebElement WISHLIST_MODULE;
 
 	public void enterSearchValue(String searchvalue) {
-		ts.Custom_SendKeys(SEARCH_BAR, searchvalue);
+		TestUtils.Custom_SendKeys(SEARCH_BAR, searchvalue);
 	}
 
 	public void clickOnSearch() {
-		ts.Custom_Click(SEARCH_BUTTON);
+		TestUtils.Custom_Click(SEARCH_BUTTON);
 	}
 
 	public void selectPosition(String productposition) {
-		ts.Custom_Handle_Dropdown(POSITION, productposition);
+		TestUtils.Custom_Handle_Dropdown(POSITION, productposition);
 	}
 
 	public void selectDisplaySize(String displaysize) {
-		ts.Custom_Handle_Dropdown(DISPLAY_SIZE, displaysize);
+		TestUtils.Custom_Handle_Dropdown(DISPLAY_SIZE, displaysize);
 	}
 
 	public void clickOnLollipop() {
-		ts.Custom_Click(LOLLIPOP);
+		TestUtils.Custom_Click(LOLLIPOP);
 	}
 
 	public void enterQuantity(String quantity) {
-		ts.Custom_SendKeys(QUANTITY, quantity);
+		TestUtils.Custom_SendKeys(QUANTITY, quantity);
 	}
 
 	public void clickOnAddToWishlist() {
-		ts.Custom_Click(ADD_TO_WISHLIST);
+		TestUtils.Custom_Click(ADD_TO_WISHLIST);
 	}
 
 	public void clickOnWishlistModule() {
-		ts.Custom_Click(WISHLIST_MODULE);
+		TestUtils.Custom_Click(WISHLIST_MODULE);
 	}
 
 }

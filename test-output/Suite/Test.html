@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jan 21 19:52:37 IST 2024</td>
+<td>Started on:</td><td>Wed Jan 24 16:34:21 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>44 seconds (44605 ms)</td>
+<tr><td>Total time:</td><td>27 seconds (27227 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,26 +75,19 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Test.AddCartTest.AddToCart()'><b>AddToCart</b><br>Test class: com.Test.AddCartTest</td>
-<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
-	at com.Test.AddCartTest.AddToCart(AddCartTest.java:19)
+<td title='com.Test.LoginTest.userLogin2()'><b>userLogin2</b><br>Test class: com.Test.LoginTest</td>
+<td><div><pre>org.testng.TestNGException: 
+Method public void com.Test.LoginTest.userLogin2(java.lang.String,java.lang.String) requires a @DataProvider named : userCredentials in class com.utility.DataProviderss
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1454870101", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1454870101'><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertTrue(Assert.java:45)
-	at org.testng.Assert.assertTrue(Assert.java:55)
-	at com.Test.AddCartTest.AddToCart(AddCartTest.java:19)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace223662325", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace223662325'><pre>org.testng.TestNGException: 
+Method public void com.Test.LoginTest.userLogin2(java.lang.String,java.lang.String) requires a @DataProvider named : userCredentials in class com.utility.DataProviderss
+	at org.testng.internal.Parameters.findDataProvider(Parameters.java:561)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:772)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
+	at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+	at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:791)
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -115,8 +108,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>1</td>
-<td>com.Test.AddCartTest@619713e5</td></tr>
+<td>0</td>
+<td>com.Test.LoginTest@6e171cd7</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -126,10 +119,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Test.AddToWishlistTest.wishlist()'><b>wishlist</b><br>Test class: com.Test.AddToWishlistTest</td>
+<td title='com.Test.UserRegistrarionTest.userLoginUsingExcelData()'><b>userLoginUsingExcelData</b><br>Test class: com.Test.UserRegistrarionTest<br>Parameters: Dhanraj, Kakde, 23, March, 1996, Honda, Dhanraj1234, Dhanraj1234</td>
 <td></td>
-<td>32</td>
-<td>com.Test.AddToWishlistTest@16ec5519</td></tr>
+<td>3</td>
+<td>com.Test.UserRegistrarionTest@72057ecf</td></tr>
+<tr>
+<td title='com.Test.UserRegistrarionTest.userLoginUsingExcelData()'><b>userLoginUsingExcelData</b><br>Test class: com.Test.UserRegistrarionTest<br>Parameters: Ganesh, Mahure, 7, January, 1999, HSBC, Ganesh1234, Ganesh1234</td>
+<td></td>
+<td>4</td>
+<td>com.Test.UserRegistrarionTest@72057ecf</td></tr>
+<tr>
+<td title='com.Test.UserRegistrarionTest.userLoginUsingExcelData()'><b>userLoginUsingExcelData</b><br>Test class: com.Test.UserRegistrarionTest<br>Parameters: Yogesh, Shinde, 4, February, 1994, DocQT, Yogesh1234, Yogesh1234</td>
+<td></td>
+<td>3</td>
+<td>com.Test.UserRegistrarionTest@72057ecf</td></tr>
 </table><p>
 </body>
 </html>

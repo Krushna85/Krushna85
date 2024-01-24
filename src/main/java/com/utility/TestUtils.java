@@ -30,20 +30,21 @@ public class TestUtils extends BaseClass {
 
 	public static void Custom_SendKeys(WebElement element, String value) {
 		try {
+			waitForVisibilityOfElement(element);
 			element.clear();
 			element.sendKeys(value);
 			// test.log(Status.PASS, fieldName+"==Value Succesfully Send " + value);
 			// test.log(Status.PASS, fieldName);
-			// log.info("Value Succesfully Sent " + fieldName);
+			// log.info("Value Succesfully Sent ");
 		} catch (Exception e) {
 			// test.log(Status.FAIL, e.getMessage() + "" + fieldName);
-			// log.error("Unable to send value " + fieldName);
+			// log.error("Unable to send value ");
 		}
 	}
 
 	public static void Custom_Click(WebElement element) {
 		try {
-			// waitForVisibilityOfElement(element);
+			waitForVisibilityOfElement(element);
 			element.click();
 			// log.info("Click Succesfully " + "" + fieldName);
 

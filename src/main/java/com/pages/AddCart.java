@@ -3,7 +3,10 @@ package com.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.utility.TestUtils;
+
 public class AddCart extends BasePage {
+
 	public AddCart() {
 		super();
 	}
@@ -27,23 +30,23 @@ public class AddCart extends BasePage {
 	// ========================ADD TO CART GET METHOD========================
 
 	public void clickOnProduct() {
-		ts.Custom_Click(PRODUCT);
+		TestUtils.Custom_Click(PRODUCT);
 	}
 
 	public void selectRAM(String ram) {
-		ts.Custom_Handle_Dropdown(RAM, ram);
+		TestUtils.Custom_Handle_Dropdown(RAM, ram);
 	}
 
 	public void selectHDD() {
-		ts.Custom_Click(HDD);
+		TestUtils.Custom_Click(HDD);
 	}
 
 	public void selectSoftware() {
-		ts.Custom_Click(SOFTWARE_CKECKBOX);
+		TestUtils.Custom_Click(SOFTWARE_CKECKBOX);
 	}
 
 	public void clickOnAddCart() {
-		ts.Custom_Click(ADD_CART_BUTTON);
+		TestUtils.Custom_Click(ADD_CART_BUTTON);
 	}
 
 	// ========================SHIPPING ELEMENT===================================
@@ -84,43 +87,43 @@ public class AddCart extends BasePage {
 	// ===================SHIPPING GET METHOD===================================
 
 	public void clickOnShippingCart() {
-		ts.Custon_Handle_Dropdown2(SHOPPING_CART);
+		TestUtils.Custon_Handle_Dropdown2(SHOPPING_CART);
 	}
 
 	public void clickOnGoToCart() {
-		ts.Custon_Action_Click(GO_TO_CART);
+		TestUtils.Custon_Action_Click(GO_TO_CART);
 	}
 
 	public void clickOnTermCondition() {
-		ts.Custom_Click(TERM_CONDITION);
+		TestUtils.Custom_Click(TERM_CONDITION);
 	}
 
 	public void clickOnCheckout() {
-		ts.Custom_Click(CHECKOUT_BUTTON);
+		TestUtils.Custom_Click(CHECKOUT_BUTTON);
 	}
 
 	public void selectCountry(String country) {
-		ts.Custom_Handle_Dropdown(COUNTRY, country);
+		TestUtils.Custom_Handle_Dropdown(COUNTRY, country);
 	}
 
 	public void sendCity(String city) {
-		ts.Custom_SendKeys(CITY, city);
+		TestUtils.Custom_SendKeys(CITY, city);
 	}
 
 	public void sendAddress1(String address1) {
-		ts.Custom_SendKeys(ADDRESS1, address1);
+		TestUtils.Custom_SendKeys(ADDRESS1, address1);
 	}
 
 	public void sendPostalCode(String postalcode) {
-		ts.Custom_SendKeys(POSTAL_CODE, postalcode);
+		TestUtils.Custom_SendKeys(POSTAL_CODE, postalcode);
 	}
 
 	public void sendPhoneNo(String phoneno) {
-		ts.Custom_SendKeys(PHONE_NO, phoneno);
+		TestUtils.Custom_SendKeys(PHONE_NO, phoneno);
 	}
 
 	public void clickOnContinue() {
-		ts.Custom_Click(CONTINUE_BUTTON);
+		TestUtils.Custom_Click(CONTINUE_BUTTON);
 	}
 
 }

@@ -10,11 +10,11 @@ public class AddCartTest extends BaseClass {
 
 	@Test
 	public void AddToCart() {
-		ac.clickOnProduct();
-		ac.selectRAM("2 GB");
-		ac.selectHDD();
-		ac.selectSoftware();
-		ac.clickOnAddCart();
+		addCart.clickOnProduct();
+		addCart.selectRAM("2 GB");
+		addCart.selectHDD();
+		addCart.selectSoftware();
+		addCart.clickOnAddCart();
 		// Assert.assertTrue(false);
 
 	}

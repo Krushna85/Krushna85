@@ -3,29 +3,30 @@ package com.Test;
 import org.testng.annotations.Test;
 
 import com.utility.BaseClass;
+import com.utility.TestUtils;
 
 public class ShippingCartTest extends BaseClass {
 
 	@Test
 	public void addShippingCart() {
-		ac.clickOnProduct();
-		ac.selectRAM("2 GB");
-		ac.selectHDD();
-		ac.selectSoftware();
-		ac.clickOnAddCart();
-		ts.Custom_ThreadSleep(2000);
-		ts.Custom_Refresh();
-		ac.clickOnShippingCart();
-		ac.clickOnGoToCart();
-		ac.clickOnTermCondition();
-		ac.clickOnCheckout();
-		ts.Custom_ThreadSleep(2000);
-		ac.selectCountry("India");
-		ac.sendCity("Noida");
-		ac.sendAddress1("laxmi pg");
-		ac.sendPostalCode("122001");
-		ac.sendPhoneNo("4492484929");
-		ac.clickOnContinue();
+		addCart.clickOnProduct();
+		addCart.selectRAM("2 GB");
+		addCart.selectHDD();
+		addCart.selectSoftware();
+		addCart.clickOnAddCart();
+		TestUtils.Custom_ThreadSleep(2000);
+		TestUtils.Custom_Refresh();
+		addCart.clickOnShippingCart();
+		addCart.clickOnGoToCart();
+		addCart.clickOnTermCondition();
+		addCart.clickOnCheckout();
+		TestUtils.Custom_ThreadSleep(2000);
+		addCart.selectCountry("India");
+		addCart.sendCity("Noida");
+		addCart.sendAddress1("laxmi pg");
+		addCart.sendPostalCode("122001");
+		addCart.sendPhoneNo("4492484929");
+		addCart.clickOnContinue();
 	}
 
 }

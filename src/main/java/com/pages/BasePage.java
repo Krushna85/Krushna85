@@ -7,7 +7,6 @@ import com.utility.BaseClass;
 public class BasePage extends BaseClass {
 
 	public BasePage() {
-
 		PageFactory.initElements(driver, this);
 	}
 }

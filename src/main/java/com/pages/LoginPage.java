@@ -4,13 +4,15 @@ package com.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.utility.TestUtils;
+
 public class LoginPage extends BasePage {
 
 	public LoginPage() {
 		super();
 	}
 
-	@FindBy(xpath = "//a[text()='Log in']")
+	@FindBy(className = "ico-login")
 	private WebElement LOGIN_MODULE;
 
 	@FindBy(id = "Email")
@@ -19,22 +21,22 @@ public class LoginPage extends BasePage {
 	@FindBy(id = "Password")
 	private WebElement PASSWORD;
 
-	@FindBy(className = "button-1 login-button")
+	@FindBy(xpath = "//button[@class='button-1 login-button']")
 	private WebElement LOGIN_CTA;
 
 	public void clickOnLoginModule() {
-		ts.Custom_Click(LOGIN_MODULE);
+		TestUtils.Custom_Click(LOGIN_MODULE);
 	}
 
-	public void sendEmail(String email) {
-		ts.Custom_SendKeys(EMAIL, email);
+	public void sendEmail(String Uname) {
+		TestUtils.Custom_SendKeys(EMAIL, Uname);
 	}
 
-	public void sendPassword(String pwd) {
-		ts.Custom_SendKeys(PASSWORD, pwd);
+	public void sendPassword(String Passwd) {
+		TestUtils.Custom_SendKeys(PASSWORD, Passwd);
 	}
 
 	public void clickOnLoginCTA() {
-		ts.Custom_Click(LOGIN_CTA);
+		TestUtils.Custom_Click(LOGIN_CTA);
 	}
 }

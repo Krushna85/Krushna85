@@ -3,12 +3,13 @@ package com.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.utility.TestUtils;
+
 import net.bytebuddy.utility.RandomString;
 
 public class UserRegistration extends BasePage {
 
 	public UserRegistration() {
-
 		super();
 	}
 
@@ -52,51 +53,51 @@ public class UserRegistration extends BasePage {
 	private WebElement REGISTER_SUCCESS;
 
 	public void clickRegisterModule() {
-		ts.Custom_Click(REGISTER);
+		TestUtils.Custom_Click(REGISTER);
 	}
 
 	public void selectGender() {
-		ts.Custom_Click(GENDER);
+		TestUtils.Custom_Click(GENDER);
 	}
 
-	public void sendFirstName(String firstname) {
-		ts.Custom_SendKeys(FIRST_NAME, firstname);
+	public void sendFirstName(String firstName) {
+		TestUtils.Custom_SendKeys(FIRST_NAME, firstName);
 	}
 
-	public void sendLastName(String lastname) {
-		ts.Custom_SendKeys(LAST_NAME, lastname);
+	public void sendLastName(String lastName) {
+		TestUtils.Custom_SendKeys(LAST_NAME, lastName);
 	}
 
 	public void selectDay(String day) {
-		ts.Custom_Handle_Dropdown(DOB_DAY, day);
+		TestUtils.Custom_Handle_Dropdown(DOB_DAY, day);
 	}
 
 	public void selectMonth(String month) {
-		ts.Custom_Handle_Dropdown(DOB_MONTH, month);
+		TestUtils.Custom_Handle_Dropdown(DOB_MONTH, month);
 	}
 
 	public void selectYear(String year) {
-		ts.Custom_Handle_Dropdown(DOB_YEAR, year);
+		TestUtils.Custom_Handle_Dropdown(DOB_YEAR, year);
 	}
 
 	public void sendEmail(String email) {
-		ts.Custom_SendKeys(EMAIL, email);
+		TestUtils.Custom_SendKeys(EMAIL, email);
 	}
 
-	public void sendCompanyName(String company) {
-		ts.Custom_SendKeys(COMPANY_NAME, company);
+	public void sendCompanyName(String companyName) {
+		TestUtils.Custom_SendKeys(COMPANY_NAME, companyName);
 	}
 
 	public void sendPassword(String pwd) {
-		ts.Custom_SendKeys(PASSWORD, pwd);
+		TestUtils.Custom_SendKeys(PASSWORD, pwd);
 	}
 
-	public void sendConfirmPassword(String confirmpwd) {
-		ts.Custom_SendKeys(CONFIRM_PASSWORD, confirmpwd);
+	public void sendConfirmPassword(String confirmPwd) {
+		TestUtils.Custom_SendKeys(CONFIRM_PASSWORD, confirmPwd);
 	}
 
 	public void ClickRegisterButton() {
-		ts.Custom_Click(REGISTER_BUTTON);
+		TestUtils.Custom_Click(REGISTER_BUTTON);
 	}
 
 	public String Custom_Random_String() {

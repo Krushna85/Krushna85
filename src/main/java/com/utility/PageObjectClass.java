@@ -1,26 +1,29 @@
 package com.utility;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.log4testng.Logger;
 
 import com.pages.AddCart;
 import com.pages.AddToWishlist;
+import com.pages.LoginPage;
 import com.pages.UserRegistration;
 
 public class PageObjectClass {
 	public static WebDriver driver;
-	// public static Logger log;
-	public TestUtils ts;
-	public UserRegistration ur;
-	public AddCart ac;
-	public AddToWishlist wish;
+	public static Logger log;
+	public UserRegistration userRegistration;
+	public AddCart addCart;
+	public AddToWishlist addToWishlist;
+	public LoginPage loginPage;
 
-	@BeforeClass
-	public void getPageClassObject() {
-		ts = new TestUtils();
-		ur = new UserRegistration();
-		ac = new AddCart();
-		wish = new AddToWishlist();
+	@BeforeMethod
+	public void aagetPageClassObject() {
+		System.out.println("************ aagetPageClassObject************************");
 
+		userRegistration = new UserRegistration();
+		addCart = new AddCart();
+		addToWishlist = new AddToWishlist();
+		loginPage = new LoginPage();
 	}
 }
