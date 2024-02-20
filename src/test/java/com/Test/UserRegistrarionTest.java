@@ -2,29 +2,37 @@ package com.Test;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.utility.BaseClass;
 import com.utility.DataProviderss;
 import com.utility.TestUtils;
 
+@Test
 public class UserRegistrarionTest extends BaseClass {
 
-	@Test(enabled = false)
+	@Test
 	public void RegisterNewUser() throws IOException {
 		TestUtils.Custom_ThreadSleep(2000);
 		userRegistration.clickRegisterModule();
 		userRegistration.selectGender();
-		userRegistration.sendFirstName("krushna");
-		userRegistration.sendLastName("sohani");
+		userRegistration.sendFirstName(userRegistration.Custom_Random_String() + "abc");
+		userRegistration.sendLastName(userRegistration.Custom_Random_String() + "xyz");
 		userRegistration.selectDay("1");
-		userRegistration.selectMonth("March");
-		userRegistration.selectYear("2001");
-		userRegistration.sendEmail(userRegistration.Custom_Random_String() + "55@gmail.com");
+		userRegistration.selectMonth("August");
+		userRegistration.selectYear("1998");
+		userRegistration.sendEmail(userRegistration.Custom_Random_String() + ".12@gmail.com");
 		userRegistration.sendCompanyName("NRB");
-		userRegistration.sendPassword("Times2@123");
-		userRegistration.sendConfirmPassword("Times2@123");
-		// userRegistration.ClickRegisterButton();
+		userRegistration.sendPassword("Times@123");
+		userRegistration.sendConfirmPassword("Times@123");
+		userRegistration.ClickRegisterButton();
+		if (driver.getPageSource().contains("Your registration completed")) {
+			Assert.assertTrue(true);
+			log.info("user registered successfully");
+		} else {
+			Assert.assertTrue(false, "user not registered");
+		}
 		// TestUtils.Custom_Screenshot();
 	}
 
@@ -43,7 +51,7 @@ public class UserRegistrarionTest extends BaseClass {
 		userRegistration.sendCompanyName(companyName);
 		userRegistration.sendPassword(pwd);
 		userRegistration.sendConfirmPassword(confirmPwd);
-		userRegistration.ClickRegisterButton();
+		// userRegistration.ClickRegisterButton();
 
 	}
 

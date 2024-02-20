@@ -53,19 +53,19 @@ public class UserRegistration extends BasePage {
 	private WebElement REGISTER_SUCCESS;
 
 	public void clickRegisterModule() {
-		TestUtils.Custom_Click(REGISTER);
+		TestUtils.Custom_Click(REGISTER, "clickRegisterModule");
 	}
 
 	public void selectGender() {
-		TestUtils.Custom_Click(GENDER);
+		TestUtils.Custom_Click(GENDER, "selectGender");
 	}
 
 	public void sendFirstName(String firstName) {
-		TestUtils.Custom_SendKeys(FIRST_NAME, firstName);
+		TestUtils.Custom_SendKeys(FIRST_NAME, firstName, "first Name ");
 	}
 
 	public void sendLastName(String lastName) {
-		TestUtils.Custom_SendKeys(LAST_NAME, lastName);
+		TestUtils.Custom_SendKeys(LAST_NAME, lastName, "lastName");
 	}
 
 	public void selectDay(String day) {
@@ -81,23 +81,23 @@ public class UserRegistration extends BasePage {
 	}
 
 	public void sendEmail(String email) {
-		TestUtils.Custom_SendKeys(EMAIL, email);
+		TestUtils.Custom_SendKeys(EMAIL, email, "email");
 	}
 
 	public void sendCompanyName(String companyName) {
-		TestUtils.Custom_SendKeys(COMPANY_NAME, companyName);
+		TestUtils.Custom_SendKeys(COMPANY_NAME, companyName, "companyName");
 	}
 
 	public void sendPassword(String pwd) {
-		TestUtils.Custom_SendKeys(PASSWORD, pwd);
+		TestUtils.Custom_SendKeys(PASSWORD, pwd, "Pwd");
 	}
 
 	public void sendConfirmPassword(String confirmPwd) {
-		TestUtils.Custom_SendKeys(CONFIRM_PASSWORD, confirmPwd);
+		TestUtils.Custom_SendKeys(CONFIRM_PASSWORD, confirmPwd, "confirmpwd");
 	}
 
 	public void ClickRegisterButton() {
-		TestUtils.Custom_Click(REGISTER_BUTTON);
+		TestUtils.Custom_Click(REGISTER_BUTTON, "ClickRegisterButton");
 	}
 
 	public String Custom_Random_String() {

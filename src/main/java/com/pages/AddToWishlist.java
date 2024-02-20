@@ -17,13 +17,13 @@ public class AddToWishlist extends BasePage {
 	@FindBy(xpath = "//button[text()='Search']")
 	private WebElement SEARCH_BUTTON;
 
-	@FindBy(id = "producTestUtils-orderby")
+	@FindBy(id = "products-orderby")
 	private WebElement POSITION;
 
-	@FindBy(id = "producTestUtils-pagesize")
+	@FindBy(id = "products-pagesize")
 	private WebElement DISPLAY_SIZE;
 
-	@FindBy(xpath = "(//a[text()='HTC One M8 Android L 5.0 Lollipop'])[2]")
+	@FindBy(xpath = "//a[text()='HTC One M8 Android L 5.0 Lollipop']")
 	private WebElement LOLLIPOP;
 
 	@FindBy(id = "product_enteredQuantity_18")
@@ -39,11 +39,11 @@ public class AddToWishlist extends BasePage {
 	private WebElement WISHLIST_MODULE;
 
 	public void enterSearchValue(String searchvalue) {
-		TestUtils.Custom_SendKeys(SEARCH_BAR, searchvalue);
+		TestUtils.Custom_SendKeys(SEARCH_BAR, searchvalue, "enterSearchValue");
 	}
 
 	public void clickOnSearch() {
-		TestUtils.Custom_Click(SEARCH_BUTTON);
+		TestUtils.Custom_Click(SEARCH_BUTTON, "clickOnSearch");
 	}
 
 	public void selectPosition(String productposition) {
@@ -55,19 +55,19 @@ public class AddToWishlist extends BasePage {
 	}
 
 	public void clickOnLollipop() {
-		TestUtils.Custom_Click(LOLLIPOP);
+		TestUtils.Custom_Click(LOLLIPOP, "clickOnLollipop");
 	}
 
 	public void enterQuantity(String quantity) {
-		TestUtils.Custom_SendKeys(QUANTITY, quantity);
+		TestUtils.Custom_SendKeys(QUANTITY, quantity, "enterQuantity");
 	}
 
 	public void clickOnAddToWishlist() {
-		TestUtils.Custom_Click(ADD_TO_WISHLIST);
+		TestUtils.Custom_Click(ADD_TO_WISHLIST, "clickOnAddToWishlist");
 	}
 
 	public void clickOnWishlistModule() {
-		TestUtils.Custom_Click(WISHLIST_MODULE);
+		TestUtils.Custom_Click(WISHLIST_MODULE, "clickOnWishlistModule");
 	}
 
 }

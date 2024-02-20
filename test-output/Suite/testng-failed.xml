@@ -1,25 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="TestAll(failed)">
-    <parameter name="Browser" value="Chrome"/>
+  <test thread-count="5" name="htcLolipopImgNamePrice(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.Test.UserRegistrarionTest">
+      <class name="com.Test.HomeTest">
         <methods>
-          <include name="userLoginUsingExcelData"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="BeforeSuite"/>
+          <include name="htcLolipopImgNamePrice"/>
+          <include name="AfterSuite"/>
           <include name="aagetPageClassObject"/>
+          <include name="checkStatus"/>
         </methods>
-      </class> <!-- com.Test.UserRegistrarionTest -->
-      <class name="com.Test.LoginTest">
-        <methods>
-          <include name="userLogin2"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="aagetPageClassObject"/>
-        </methods>
-      </class> <!-- com.Test.LoginTest -->
+      </class> <!-- com.Test.HomeTest -->
     </classes>
-  </test> <!-- TestAll(failed) -->
+  </test> <!-- htcLolipopImgNamePrice(failed) -->
+  <test thread-count="5" name="htcMiniblueImgNamePrice(failed)">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="com.Test.HomeTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="BeforeSuite"/>
+          <include name="AfterSuite"/>
+          <include name="aagetPageClassObject"/>
+          <include name="htcMiniblueImgNamePrice"/>
+          <include name="checkStatus"/>
+        </methods>
+      </class> <!-- com.Test.HomeTest -->
+    </classes>
+  </test> <!-- htcMiniblueImgNamePrice(failed) -->
+  <test thread-count="5" name="SearchProductNotAvailable(failed)">
+    <parameter name="browser" value="InternetExplorer"/>
+    <classes>
+      <class name="com.Test.HomeTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="BeforeSuite"/>
+          <include name="SearchProductNotAvailable"/>
+          <include name="AfterSuite"/>
+          <include name="aagetPageClassObject"/>
+          <include name="checkStatus"/>
+        </methods>
+      </class> <!-- com.Test.HomeTest -->
+    </classes>
+  </test> <!-- SearchProductNotAvailable(failed) -->
 </suite> <!-- Failed suite [Suite] -->

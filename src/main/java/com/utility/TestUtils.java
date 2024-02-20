@@ -6,9 +6,12 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -22,36 +25,43 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import net.bytebuddy.utility.RandomString;
 
 public class TestUtils extends BaseClass {
+	static Log log = new Log();
 
-	public String randomstring() {
+	public static String randomstring() {
 		RandomString.make(4);
-		return randomstring();
+		return randomstring() + ".12@gmail.com";
 	}
 
-	public static void Custom_SendKeys(WebElement element, String value) {
+	public static void performScrollTillElement(WebElement element) {
+		Log.info("Scrolling Till " + element + " Element is visible");
+		Actions actions = new Actions(driver);
+		actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+	}
+
+	public static void Custom_SendKeys(WebElement element, String value, String fieldName) {
 		try {
 			waitForVisibilityOfElement(element);
 			element.clear();
 			element.sendKeys(value);
+			log.info("successfully sent the value " + value + " in the " + fieldName);
+		} catch (Exception e) {
 			// test.log(Status.PASS, fieldName+"==Value Succesfully Send " + value);
 			// test.log(Status.PASS, fieldName);
-			// log.info("Value Succesfully Sent ");
-		} catch (Exception e) {
-			// test.log(Status.FAIL, e.getMessage() + "" + fieldName);
-			// log.error("Unable to send value ");
+			element.sendKeys(value);
+			log.info("unable to send the value " + value + " in the " + fieldName);
+
 		}
 	}
 
-	public static void Custom_Click(WebElement element) {
+	public static void Custom_Click(WebElement element, String fieldName) {
 		try {
 			waitForVisibilityOfElement(element);
 			element.click();
-			// log.info("Click Succesfully " + "" + fieldName);
-
+			log.info("clicked on " + fieldName);
 		} catch (Exception e) {
-//				
-			// element.click();
-			// log.error("Unable to click " + fieldName);
+			element.click();
+			log.error("unable to click on " + fieldName);
+			element.click();
 
 		}
 	}
@@ -60,10 +70,37 @@ public class TestUtils extends BaseClass {
 		try {
 			Select s = new Select(element);
 			s.selectByVisibleText(text);
-//				s.selectByValue(value);
-			// s.selectByIndex(index);
+			log.info("the value " + text + " selected from the dropdown");
+//			s.selectByValue(value);
+//			s.selectByIndex(index);
 
 		} catch (Exception e) {
+			log.info("unable to select the value " + text + " from dropdown");
+
+		}
+	}
+
+	public static void Custom_Handle_Dropdown_By_Value(WebElement element, String value) {
+		try {
+			Select s = new Select(element);
+			s.selectByValue(value);
+			log.info("the value " + value + " selected from the dropdown");
+
+		} catch (Exception e) {
+			log.info("unable to select the value from dropdown ");
+
+		}
+	}
+
+	public static void Custom_Handle_Dropdown_By_Index(WebElement element, int index) {
+		try {
+			Select s = new Select(element);
+			s.selectByIndex(index);
+			log.info("the value " + index + " selected from the dropdown");
+//			
+
+		} catch (Exception e) {
+			log.info("unable to select the Dropdown value");
 
 		}
 	}
@@ -105,9 +142,7 @@ public class TestUtils extends BaseClass {
 	}
 
 	public static WebElement waitForVisibilityOfElement(WebElement element) {
-		TestUtils.Custom_ThreadSleep(000);
-		// logger.info("Waiting for element to be visible ");
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(element));
 		return element;
 
@@ -143,7 +178,7 @@ public class TestUtils extends BaseClass {
 		driver.switchTo().alert().dismiss();
 	}
 
-	public static void Custom_Gettext() {
+	public static void Custom_Alert_Gettext() {
 		// logger.info("getting text of alert popup ");
 		driver.switchTo().alert().getText();
 	}
@@ -213,15 +248,23 @@ public class TestUtils extends BaseClass {
 	}
 
 	public static void Custon_Handle_Dropdown2(WebElement element) {
-		Actions act = new Actions(driver);
-		act.moveToElement(element).perform();
-
+		try {
+			Actions act = new Actions(driver);
+			act.moveToElement(element).perform();
+			log.info("moved on element");
+		} catch (Exception e) {
+			log.info("unable to move on element");
+		}
 	}
 
 	public static void Custon_Action_Click(WebElement element) {
-		Actions act = new Actions(driver);
-		act.click(element).perform();
-
+		try {
+			Actions act = new Actions(driver);
+			act.click(element).perform();
+			log.info("clicked on movable element");
+		} catch (Exception e) {
+			log.info("unable to click on movable element");
+		}
 	}
 //		public static String getDataFromPropertyFile(String key) throws
 //		IOException 
@@ -237,8 +280,18 @@ public class TestUtils extends BaseClass {
 //		 return value; 
 //		 }
 
-	public static void Custom_is_Displayed(WebElement element, String value) {
-		driver.findElement(By.xpath(value)).isDisplayed();
+	public static void Custom_is_Displayed(WebElement element, String fieldName) {
+
+		try {
+			element.isDisplayed();
+			// driver.findElement(By.xpath(element)).isDisplayed();
+			log.info("element is displaying " + fieldName);
+			// return true;
+		} catch (Exception e) {
+			log.info("element is not displaying " + fieldName);
+			// return false;
+		}
+
 	}
 
 	public static void Custom_is_Enabled(WebElement element, String value) {
@@ -247,6 +300,35 @@ public class TestUtils extends BaseClass {
 
 	public static void Custom_is_selected(WebElement element, String value) {
 		driver.findElement(By.xpath(value)).isSelected();
+	}
+
+	public static int countWebElements(String tOTAL_PRODUCT_COUNT) {
+		List<WebElement> listOfElements = driver.findElements(By.xpath(tOTAL_PRODUCT_COUNT));
+		return listOfElements.size();
+	}
+
+	public static void getText(WebElement element) {
+
+		System.out.println(element.getText());
+
+	}
+
+	public static void scrollTillElementIsVisible(WebElement element) {
+		Log.debug("Scrolling till element is visible");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// js.executeScript("arguments[0].scrollIntoView();", element);
+		js.executeScript("arguments[0].scrollIntoView(true)", element);
+	}
+
+//	public static void scrollByPixels(int pixels) {
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0, arguments[0]);", pixels);
+//	}
+
+	public static void scrollByPixelSize(int PixelSize) {
+		Log.info("Scrolling by pixel size");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0," + PixelSize + ")", "");
 	}
 
 }
