@@ -2,43 +2,43 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-20T01:16:26 IST" name="Default suite" finished-at="2024-02-20T01:16:57 IST" duration-ms="30799">
+  <suite started-at="2024-02-23T15:14:36 IST" name="Default suite" finished-at="2024-02-23T15:15:08 IST" duration-ms="32161">
     <groups>
     </groups>
-    <test started-at="2024-02-20T01:16:26 IST" name="Default test" finished-at="2024-02-20T01:16:57 IST" duration-ms="30799">
-      <class name="com.Test.EndToEndTestCase">
-        <test-method is-config="true" signature="BeforeSuite()[pri:0, instance:com.Test.EndToEndTestCase@74c79fa2]" started-at="2024-02-20T01:16:26 IST" name="BeforeSuite" finished-at="2024-02-20T01:16:26 IST" duration-ms="441" status="PASS">
+    <test started-at="2024-02-23T15:14:36 IST" name="Default test" finished-at="2024-02-23T15:15:08 IST" duration-ms="32161">
+      <class name="com.Test.HandleMultiCheckbox">
+        <test-method is-config="true" signature="BeforeSuite()[pri:0, instance:com.Test.HandleMultiCheckbox@74c79fa2]" started-at="2024-02-23T15:14:36 IST" name="BeforeSuite" finished-at="2024-02-23T15:14:36 IST" duration-ms="441" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeSuite -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.Test.EndToEndTestCase@74c79fa2]" started-at="2024-02-20T01:16:26 IST" name="setup" finished-at="2024-02-20T01:16:34 IST" duration-ms="7568" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.Test.HandleMultiCheckbox@74c79fa2]" started-at="2024-02-23T15:14:36 IST" name="setup" finished-at="2024-02-23T15:14:44 IST" duration-ms="7910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="aagetPageClassObject()[pri:0, instance:com.Test.EndToEndTestCase@74c79fa2]" started-at="2024-02-20T01:16:34 IST" name="aagetPageClassObject" finished-at="2024-02-20T01:16:34 IST" duration-ms="82" status="PASS">
+        <test-method is-config="true" signature="aagetPageClassObject()[pri:0, instance:com.Test.HandleMultiCheckbox@74c79fa2]" started-at="2024-02-23T15:14:44 IST" name="aagetPageClassObject" finished-at="2024-02-23T15:14:44 IST" duration-ms="93" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aagetPageClassObject -->
-        <test-method signature="buyProduct()[pri:0, instance:com.Test.EndToEndTestCase@74c79fa2]" started-at="2024-02-20T01:16:34 IST" name="buyProduct" finished-at="2024-02-20T01:16:57 IST" duration-ms="23064" status="PASS">
+        <test-method signature="selectingMultiCheckbox()[pri:0, instance:com.Test.HandleMultiCheckbox@74c79fa2]" started-at="2024-02-23T15:14:44 IST" name="selectingMultiCheckbox" finished-at="2024-02-23T15:15:08 IST" duration-ms="24080" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- buyProduct -->
-        <test-method is-config="true" signature="checkStatus(org.testng.ITestResult)[pri:0, instance:com.Test.EndToEndTestCase@74c79fa2]" started-at="2024-02-20T01:16:57 IST" name="checkStatus" finished-at="2024-02-20T01:16:57 IST" duration-ms="4" status="PASS">
+        </test-method> <!-- selectingMultiCheckbox -->
+        <test-method is-config="true" signature="checkStatus(org.testng.ITestResult)[pri:0, instance:com.Test.HandleMultiCheckbox@74c79fa2]" started-at="2024-02-23T15:15:08 IST" name="checkStatus" finished-at="2024-02-23T15:15:08 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=buyProduct status=SUCCESS method=EndToEndTestCase.buyProduct()[pri:0, instance:com.Test.EndToEndTestCase@74c79fa2] output={null}]]]>
+                <![CDATA[[TestResult name=selectingMultiCheckbox status=SUCCESS method=HandleMultiCheckbox.selectingMultiCheckbox()[pri:0, instance:com.Test.HandleMultiCheckbox@74c79fa2] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkStatus -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Test.EndToEndTestCase@74c79fa2]" started-at="2024-02-20T01:16:57 IST" name="tearDown" finished-at="2024-02-20T01:16:57 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Test.HandleMultiCheckbox@74c79fa2]" started-at="2024-02-23T15:15:08 IST" name="tearDown" finished-at="2024-02-23T15:15:08 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.Test.EndToEndTestCase -->
+      </class> <!-- com.Test.HandleMultiCheckbox -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,5 +1,8 @@
 package com.utility;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,13 +11,16 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
@@ -149,7 +155,7 @@ public class TestUtils extends BaseClass {
 	}
 
 	public static WebElement waitForElementToBeClickable(WebElement element) {
-		// logger.info("Waiting for element to be clickable ");
+		log.info("Waiting for element to be clickable ");
 		TestUtils.waitForVisibilityOfElement(element);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -331,4 +337,88 @@ public class TestUtils extends BaseClass {
 		js.executeScript("window.scrollBy(0," + PixelSize + ")", "");
 	}
 
+	public void setBrowserWindowSize() {
+		Dimension D = new Dimension(600, 800);
+		driver.manage().window().setSize(D);
+		log.info("browser window size has set");
+	}
+
+	public void Autosuggestion(WebElement element, String xpath) {
+
+	}
+
+	public static List<WebElement> findAllElements(By xpath) {
+		List<WebElement> totalElements = driver.findElements((xpath));
+		return totalElements;
+
+	}
+
+	public static void JSclick(WebElement element) {
+		try {
+			log.info("clicking on element using JSexecutor");
+			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+			jsExecutor.executeScript("arguments[0].click();", element);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	public static void implicitWait(WebDriver driver, int sec) {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+	public void getSize(WebElement element, int width, int height) {
+		element.getSize();
+		log.info("the width of the element is " + width + "and  Height is " + height);
+	}
+
+	public static void openPDFfileFromBrowser() throws InterruptedException, AWTException {
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_J);
+		robot.keyRelease(KeyEvent.VK_J);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		Thread.sleep(1000); // Wait for the Downloads tab to open
+
+		// Press Enter to open the downloaded file
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		Thread.sleep(5000);
+	}
+
+	public static void uploadFile(String filePath, By locator) throws Exception {
+		try {
+			log.info("uploading the file");
+			WebElement uploadFile = driver.findElement(locator);
+			uploadFile.sendKeys(filePath);
+			System.out.println("File is uploaded");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+//	public static void clickAllCheckboxes(List<WebElement> checkboxes) {
+//		for (WebElement checkbox : checkboxes) {
+//			checkbox.click();
+//			try {
+//				checkbox.click();
+//				log.info("selected on checkbox");
+//				Thread.sleep(500);
+//			} catch (InterruptedException e) {
+//				log.info("unable to select the checkbox");
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+//	public static void clickAllCheckboxes(List<WebElement> checkboxes) throws InterruptedException {
+//
+//		for (int i = 0; i <= checkboxes.size() - 1; i++) {
+//			checkboxes.get(i).click();
+//			log.info("selected on checkbox");
+//			Thread.sleep(500);
+//		}
+//
+//	}
 }

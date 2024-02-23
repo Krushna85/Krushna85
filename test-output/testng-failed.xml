@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Test.EndToEndTestCase">
+      <class name="com.Test.HandleMultiCheckbox">
         <methods>
+          <include name="selectingMultiCheckbox"/>
           <include name="setup"/>
           <include name="tearDown"/>
           <include name="BeforeSuite"/>
-          <include name="buyProduct"/>
           <include name="aagetPageClassObject"/>
           <include name="checkStatus"/>
         </methods>
-      </class> <!-- com.Test.EndToEndTestCase -->
+      </class> <!-- com.Test.HandleMultiCheckbox -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -6,10 +6,10 @@ import java.time.Duration;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -22,16 +22,23 @@ public class BaseClass extends ConfigDataProvider {
 	public static ExtentTest extentTest;
 	public static String pathofss;
 
-	@BeforeTest
+	@BeforeClass
 	public void setup() throws InterruptedException {
 		// extentReport = new ExtentReport();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		// options.addArguments("--headless");
 		options.addArguments("--incognito");
+		// options.addArguments("disable-infobars");
+		// options.addArguments("--disable-extensions");
+		// options.addArguments("--auto-open-devtools-for-tabs");
+		// options.addArguments("download.default_directory=/path/to/download/directory");
+
 		driver = new ChromeDriver(options);
 		log.info("Browser is launching");
-		driver.manage().window().maximize();
+		// Dimension size = new Dimension(1000, 1000); // Width, Height
+		// driver.manage().window().setSize(size);
+		driver.manage().deleteAllCookies();
 		Thread.sleep(1000);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		driver.get(BaseUrl);
@@ -87,9 +94,9 @@ public class BaseClass extends ConfigDataProvider {
 	@AfterMethod
 	public void checkStatus(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
-			log.info(" Test case is failed ");
+			log.info(result.getName() + " Test case is failed screenshot has captured ");
 
-			 TestUtils.Custom_Screenshot(result.getName());
+			TestUtils.Custom_Screenshot(result.getName());
 			// extentTest.info("Test case Failed here is screenshot ");
 			// extentTest.addScreenCaptureFromPath(pathofss);
 			// extentTest.fail(result.getThrowable());
@@ -99,7 +106,7 @@ public class BaseClass extends ConfigDataProvider {
 		}
 	}
 
-	@AfterTest
+	@AfterClass
 	public void tearDown() {
 		log.info("closing the browser");
 		// driver.close();

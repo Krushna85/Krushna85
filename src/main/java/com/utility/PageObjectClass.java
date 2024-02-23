@@ -4,12 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.log4testng.Logger;
 
-import com.pages.AddCart;
 import com.pages.AddCartPage;
 import com.pages.AddToWishlist;
-import com.pages.AddressPage;
+import com.pages.BillingAddressPage;
 import com.pages.HomePage;
 import com.pages.LoginPage;
+import com.pages.OrderInformationPage;
+import com.pages.SelectMultiCheckboxes;
+import com.pages.ShippingAddressPage;
 import com.pages.ShoppingCartPage;
 import com.pages.UserRegistration;
 
@@ -19,23 +21,27 @@ public class PageObjectClass {
 	public UserRegistration userRegistration;
 	public LoginPage loginPage;
 	public HomePage homePage;
-	public AddCart addCart;
 	public AddCartPage addCartPage;
 	public ShoppingCartPage shoppingCartPage;
 	public AddToWishlist addToWishlist;
-	public AddressPage addressPage;
+	public BillingAddressPage billingAddressPage;
+	public ShippingAddressPage shippingAddressPage;
+	public OrderInformationPage orderInformationPage;
 	public ExtentReport extentReport;
+	public SelectMultiCheckboxes selectMultiCheckboxes;
 
 	@BeforeMethod
 	public void aagetPageClassObject() {
 		userRegistration = new UserRegistration();
 		loginPage = new LoginPage();
 		homePage = new HomePage();
-		addCart = new AddCart();
 		addCartPage = new AddCartPage();
 		shoppingCartPage = new ShoppingCartPage();
 		addToWishlist = new AddToWishlist();
-		addressPage = new AddressPage();
+		billingAddressPage = new BillingAddressPage();
+		shippingAddressPage = new ShippingAddressPage();
+		orderInformationPage = new OrderInformationPage();
 		extentReport = new ExtentReport();
+		selectMultiCheckboxes = new SelectMultiCheckboxes();
 	}
 }
